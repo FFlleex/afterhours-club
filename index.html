@@ -3,10 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101310">
 <meta name="description" content="AFTERHOURS — концепт компьютерного клуба. Сравните игровые зоны и рассчитайте стоимость сеанса.">
 <title>AFTERHOURS — компьютерный клуб</title>
 <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=3">
 <script type="module" src="app.js?v=2"></script>
 </head>
 <body>
@@ -19,43 +20,45 @@
   </div>
 </header>
 <main id="main">
-  <section class="hero" aria-labelledby="title">
-    <img src="assets/club.webp" height="1024" width="1536" fetchpriority="high" alt="">
-    <div class="hero-content wrap">
+  <section class="hero wrap" aria-labelledby="title">
+    <div class="hero-content">
       <p class="kicker">Компьютерный клуб · Казань</p>
       <h1 id="title">Играй<br>до утра</h1>
-      <p class="hero-copy">Собери команду, выбери игровую зону и посчитай стоимость сессии.</p>
-      <a class="button" href="#zones">Выбрать зону <span aria-hidden="true">↘</span></a>
+      <p class="hero-copy">Игровые ПК с мониторами до 360 Гц и отдельная комната для команды.</p>
+      <a class="button" href="#zones">Выбрать зону</a>
+    </div>
+    <div class="hero-media">
+      <img src="assets/club.webp" height="1024" width="1536" fetchpriority="high" alt="Игровой зал с рядами компьютеров и тёплой подсветкой">
     </div>
   </section>
   <section class="zones wrap" id="zones" aria-labelledby="zones-title">
-    <div class="section-head"><h2 id="zones-title">Зоны и тарифы</h2><p>Цена за одно место и один час</p></div>
+    <div class="section-head"><h2 id="zones-title">Зоны и тарифы</h2><p>Тарифы за одно место</p></div>
     <div class="zone-list">
       <article class="zone">
         <div><h3>BASE</h3><p>Основной зал</p></div>
         <p class="spec">240 Гц <span>·</span> RTX 4060</p>
         <p class="price">250 ₽<small> / час</small></p>
-        <a href="#booking" data-zone="base" aria-label="Выбрать BASE">Выбрать <span aria-hidden="true">↗</span></a>
+        <a href="#booking" data-zone="base" aria-label="Выбрать BASE">Выбрать</a>
       </article>
-      <article class="zone">
+      <article class="zone zone-featured">
         <div><h3>PRO</h3><p>Места с мониторами 360 Гц</p></div>
         <p class="spec">360 Гц <span>·</span> RTX 4070</p>
         <p class="price">350 ₽<small> / час</small></p>
-        <a href="#booking" data-zone="pro" aria-label="Выбрать PRO">Выбрать <span aria-hidden="true">↗</span></a>
+        <a href="#booking" data-zone="pro" aria-label="Выбрать PRO">Выбрать</a>
       </article>
       <article class="zone">
         <div><h3>BOOTCAMP</h3><p>Отдельная комната для команды</p></div>
         <p class="spec">360 Гц <span>·</span> RTX 4080</p>
         <p class="price">600 ₽<small> / час</small></p>
-        <a href="#booking" data-zone="bootcamp" aria-label="Выбрать BOOTCAMP">Выбрать <span aria-hidden="true">↗</span></a>
+        <a href="#booking" data-zone="bootcamp" aria-label="Выбрать BOOTCAMP">Выбрать</a>
       </article>
     </div>
   </section>
   <section class="booking" id="booking" aria-labelledby="booking-title">
     <div class="wrap booking-inner">
       <div>
-        <h2 id="booking-title">Забронировать<br>сеанс</h2>
-        <p class="demo-note" id="demo-note">Демонстрационный режим. Реальная бронь и оплата отсутствуют. Время указано по Казани.</p>
+        <h2 id="booking-title">Забронировать сеанс</h2>
+        <p class="demo-note" id="demo-note">Демобронь без оплаты. Время указано по Казани.</p>
       </div>
       <form id="booking-form" aria-describedby="demo-note">
         <div class="fields">
@@ -66,13 +69,13 @@
           <label>Длительность<select id="duration" name="length"><option value="1">1 час</option><option value="2">2 часа</option><option value="3">3 часа</option><option value="4">4 часа</option><option value="5">5 часов</option><option value="6">6 часов</option></select></label>
         </div>
         <div class="form-total"><span>Стоимость сеанса</span><output for="zone seats duration" id="total">250 ₽</output></div>
-        <button class="button" type="submit">Подтвердить демобронь <span aria-hidden="true">↗</span></button>
+        <button class="button" type="submit">Подтвердить демобронь</button>
         <p class="confirmation" id="confirmation" role="status" aria-atomic="true"></p>
         <noscript><p>Для расчёта стоимости и демобронирования включите JavaScript.</p></noscript>
       </form>
     </div>
   </section>
 </main>
-<footer class="wrap footer"><a class="brand" href="./">AFTERHOURS<span>.</span></a><small>Концепт компьютерного клуба для портфолио</small><a href="#main">Наверх ↑</a></footer>
+<footer class="wrap footer"><a class="brand" href="./">AFTERHOURS<span>.</span></a><small>Концепт компьютерного клуба для портфолио</small><a href="#main">Наверх</a></footer>
 </body>
 </html>
