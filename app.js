@@ -1,7 +1,11 @@
 const zoneNames = { base: 'BASE', pro: 'PRO', bootcamp: 'BOOTCAMP' };
 const rates = { base: 250, pro: 350, bootcamp: 600 };
 const form = document.querySelector('#booking-form');
-const { zone, seats, day, time, length } = form.elements;
+const zone = form.elements.namedItem('zone');
+const seats = form.elements.namedItem('seats');
+const day = form.elements.namedItem('day');
+const time = form.elements.namedItem('time');
+const duration = form.elements.namedItem('length');
 const cost = document.querySelector('#total');
 const confirmation = document.querySelector('#confirmation');
 
@@ -16,7 +20,7 @@ const dateParts = new Intl.DateTimeFormat('sv-SE', {
 });
 
 function updateEstimate() {
-  cost.value = money.format(rates[zone.value] * Number(seats.value) * Number(length.value));
+  cost.value = money.format(rates[zone.value] * Number(seats.value) * Number(duration.value));
 }
 
 function clearConfirmation() {
@@ -50,6 +54,6 @@ form.addEventListener('submit', (event) => {
     time.reportValidity();
     return;
   }
-  const endsAt = new Date(startsAt.getTime() + Number(length.value) * 3600000);
+  const endsAt = new Date(startsAt.getTime() + Number(duration.value) * 3600000);
   confirmation.textContent = `Демобронь подтверждена. ${zoneNames[zone.value]} · мест: ${seats.value}. ${displayDate.formatRange(startsAt, endsAt)} · ${cost.value}.`;
 });
