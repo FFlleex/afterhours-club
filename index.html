@@ -7,7 +7,7 @@
 <title>AFTERHOURS — компьютерный клуб</title>
 <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
 <link rel="stylesheet" href="style.css">
-<script type="module" src="app.js"></script>
+<script type="module" src="app.js?v=2"></script>
 </head>
 <body>
 <a class="skip" href="#main">К содержанию</a>
@@ -59,13 +59,13 @@
       </div>
       <form id="booking-form" aria-describedby="demo-note">
         <div class="fields">
-          <label>Игровая зона<select name="zone"><option value="base">BASE</option><option value="pro">PRO</option><option value="bootcamp">BOOTCAMP</option></select></label>
-          <label>Места<select name="seats"><option value="1">1 место</option><option value="2">2 места</option><option value="3">3 места</option><option value="4">4 места</option><option value="5">5 мест</option></select></label>
+          <label>Игровая зона<select id="zone" name="zone"><option value="base">BASE</option><option value="pro">PRO</option><option value="bootcamp">BOOTCAMP</option></select></label>
+          <label>Места<select id="seats" name="seats"><option value="1">1 место</option><option value="2">2 места</option><option value="3">3 места</option><option value="4">4 места</option><option value="5">5 мест</option></select></label>
           <label>Дата<input name="day" type="date" required></label>
           <label>Начало<input name="time" type="time" required></label>
-          <label>Длительность<select name="length"><option value="1">1 час</option><option value="2">2 часа</option><option value="3">3 часа</option><option value="4">4 часа</option><option value="5">5 часов</option><option value="6">6 часов</option></select></label>
+          <label>Длительность<select id="duration" name="length"><option value="1">1 час</option><option value="2">2 часа</option><option value="3">3 часа</option><option value="4">4 часа</option><option value="5">5 часов</option><option value="6">6 часов</option></select></label>
         </div>
-        <div class="form-total"><span>Стоимость сеанса</span><output for="zone seats length" id="total">250 ₽</output></div>
+        <div class="form-total"><span>Стоимость сеанса</span><output for="zone seats duration" id="total">250 ₽</output></div>
         <button class="button" type="submit">Подтвердить демобронь <span aria-hidden="true">↗</span></button>
         <p class="confirmation" id="confirmation" role="status" aria-atomic="true"></p>
         <noscript><p>Для расчёта стоимости и демобронирования включите JavaScript.</p></noscript>
